@@ -37,7 +37,7 @@ const findAll = async (req, res) => {
 const findYearMonth = async (req, res) => {
     try {
         const yearMonth = req.params.period;
-        const data = await TransactionModel.find({ _yearMonth: 'yearMonth' });
+        const data = await TransactionModel.find({ _yearMonth: yearMonth });
         res.send('Entradas encontradas:' + data.value);
     } catch (error) {
         res.send('Ocorreu um erro ao tentar encontrar as entradas:' + error);
