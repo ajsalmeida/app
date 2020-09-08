@@ -41,13 +41,8 @@ const findAll = async (req, res) => {
 //retorna a entrada buscada no banco de dados
 const findYearMonth =  async (req, res) => {
     try {
-        //explode
-        const period = req.params.yearmonth.split('-');
-        const year = period[0];
-        const month = period[1];
-        const yearMonth = year + '-'+ month;
-
-        const data = await TransactionModel.find({yearMonth: yearMonth});
+        const period = req.params.yearmonth;
+        const data = await TransactionModel.find({yearMonth: period});
         console.log(data);
         if (!data) {
             res.status(500).send('Ocorreu um erro ao buscar valores');
