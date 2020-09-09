@@ -6,7 +6,7 @@ const transactionService = require('../services/transactionService.js');
 transactionRouter.post('/create', transactionService.create);
 transactionRouter.get('/findAll', transactionService.findAll);
 transactionRouter.get('/findYearMonth/:yearmonth', transactionService.findYearMonth);
-transactionRouter.put('/update/:id', transactionService.update);
-transactionRouter.delete('/delete/:id', transactionService.remove);
+transactionRouter.put('/update', transactionService.update);
+transactionRouter.delete('/delete', transactionService.remove);
 
 module.exports = transactionRouter;
